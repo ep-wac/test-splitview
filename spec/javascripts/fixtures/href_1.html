@@ -1,0 +1,112 @@
+		
+		<!-- menu panel -->
+		<div data-role="panel" data-id="menu" data-hash="crumbs" data-context="menu_default">
+			<div data-role="page" id="main">
+				<div data-role="header" data-backbtn="false" >
+				</div>
+				<div data-role="content" class="menu_links_one">	
+					<a id="t1" href="/" >link reloads entire document - with new content/refresh</a>
+					<a id="t2" href="/partners" >link reloads menu panel - with new content</a>
+					<a id="t3" href="/partners" >link reloads main panel - with new content</a>
+					<a id="t4" href="#main" >link hits #page on menu panel</a>
+					<a id="t5" href="#main" >link hits #page on menu panel - with new content</a>
+					<a id="t6" href="#form_four" data-panel="main"  >link hits #page on main panel</a>
+					<a id="t7" href="#form_four" data-panel="main"  >link hits #page on main panel - with new content</a>
+					<a id="t8" href="#main,#form_four" >link hits #page,#page on menu and main panel</a>
+					<a id="t9" href="#main,#form_four" >link hits #page,#page on menu and main panel - with new content</a>
+					<a id="t10" href="test_function()" >link calls function</a>
+				</div>
+				<div data-role="footer" data-position="fixed" data-id="ew-footer">
+				</div>
+			</div>
+			<div data-role="page" id="form_one">
+				<div data-role="header" data-backbtn="false" >
+				</div>
+				<div data-role="content" class="menu_links_two">	
+					<form accept-charset="UTF-8" action="/users/sign_in" class="simple_form user" data-ajax="false" id="user_new" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="V9MgjfEHQXQ3UND2m/KhV9uU9kCmMepZSGX58zvzXS8="></div>
+						<input id="user_ox_id" name="user[ox_id]" type="hidden" value="1">
+						<div data-role="fieldcontain">
+							<div class="input string optional"><input class="string optional" id="user_username" maxlength="255" name="user[username]" placeholder="Username" size="50" type="text"></div>
+						</div>
+						<div data-role="fieldcontain">
+							<div class="input password required"><input class="password required" id="user_password" name="user[password]" placeholder="Password" required="required" size="30" type="password"></div>
+						</div>
+						<div data-role="fieldcontain">
+							<fieldset data-role="controlgroup">
+								<input id="user_remember_me" name="user[remember_me]" type="checkbox">
+								<label for="user_remember_me">
+									<span class="translation_missing">en, remember_me</span>
+								</label>
+							</fieldset>
+						</div>
+						<input id="t11" name="commit" rel="external" type="submit" value="link POSTs form on active panel" />
+					</form>					
+				</div>
+				<div data-role="footer" data-position="fixed" data-id="ew-footer">
+				</div>
+			</div>
+			<div data-role="page" id="form_two">
+				<div data-role="header" data-backbtn="false" >
+				</div>
+				<div data-role="content" class="menu_links_three">	
+					<form>
+						<input id="t12" type="submit" value="link POSTs form on menu panel - on success changes content in #page on menu panel" />
+					</form>
+				</div>
+				<div data-role="footer" data-position="fixed" data-id="ew-footer">
+				</div>
+			</div>
+			<div data-role="page" id="form_three">
+				<div data-role="header" data-backbtn="false" >
+				</div>
+				<div data-role="content" class="menu_links_four">	
+					<form>
+						<input id="t13" type="submit" value="link POSTs form on menu panel - on success changes content in #page on main panel" />
+					</form>
+				</div>
+				<div data-role="footer" data-position="fixed" data-id="ew-footer">
+				</div>
+			</div>
+		</div>
+
+		<!-- main panel -->
+		<div data-role="panel" data-id="main" data-hash="crumbs" data-context="main_default">
+			<div data-role="page" id="form_four">
+				<div data-role="header" data-backbtn="false" >
+				</div>
+				<div data-role="content" class="main_links_one">	
+					<form>
+						<input id="t14" type="submit" value="link POSTs form on main panel - on success changes content in #page on menu panel (controlled by server side)" />
+					</form>
+				</div>
+				<div data-role="footer" data-position="fixed" data-id="ew-footer">
+				</div>
+			</div>
+			<div data-role="page" id="form_five">
+				<div data-role="header" data-backbtn="false" >
+				</div>
+				<div data-role="content" class="main_links_two">	
+					<form>
+						<input id="t15" type="submit" value="link POSTs form on main panel - on success changes content in #page on main panel (controlled by server side)" />
+					</form>
+				</div>
+				<div data-role="footer" data-position="fixed" data-id="ew-footer">
+				</div>
+			</div>
+			<div data-role="page" id="form_six">
+				<div data-role="header" data-backbtn="false" >
+				</div>
+				<div data-role="content" class="main_links_three">	
+					<form>
+						<input id="t16" type="submit" value="link POSTs form on active panel - on success changes content in #page,#page on both panels (controlled by server side)" />
+					</form>
+				</div>
+				<div data-role="footer" data-position="fixed" data-id="ew-footer">
+				</div>
+			</div>
+		</div>
+
+		<!-- <script type="text/javascript" src="javascripts/jquery.js"></script>   -->
+		<!-- Your project file goes here -->  
+		<!-- <script type="text/javascript" src="javascripts/jquery.mobile.splitview.js"></script>   -->
+		<script type="text/javascript" src="javascripts/application.js"></script>  
