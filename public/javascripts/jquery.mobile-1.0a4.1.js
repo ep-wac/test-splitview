@@ -2402,7 +2402,7 @@ $.widget( "mobile.page", $.mobile.widget, {
 					.jqmData( "lastScroll", currScroll )
 					.jqmData( "lastClicked", $activeClickedLink );
 				//trigger before show/hide events
-				from.data( "page" )._trigger( "beforehide", null, { nextPage: to } );
+				try{from.data( "page" )._trigger( "beforehide", null, { nextPage: to } ); }catch(e){}
 			}
 			try{ to.data( "page" )._trigger( "beforeshow", null, { prevPage: from || $( "" ) } ); }catch(e){}
 
@@ -2437,7 +2437,7 @@ $.widget( "mobile.page", $.mobile.widget, {
 
 				//trigger show/hide events
 				if( from ) {
-					from.data( "page" )._trigger( "hide", null, { nextPage: to } );
+					try{from.data( "page" )._trigger( "hide", null, { nextPage: to } );}catch(e){}
 				}
 				//trigger pageshow, define prevPage as either from or empty jQuery obj
 				try{to.data( "page" )._trigger( "show", null, { prevPage: from || $( "" ) } );}catch(e){}
