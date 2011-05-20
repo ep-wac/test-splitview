@@ -18,5 +18,6 @@ On the other hand, you might just as well accolade that all the gruntwork is cle
 Anyways; I've described the use cases and added my 2 cents of view on the actions following the click event on a-tags and submit inputs and now I'm facing this small list of tasks:
 
 # somehow the testing must be split into separate testing runs - 132 tests in one batch is on the brink of exhausting my browser entirely
-# the $.mobile.changePage must be repurposed for testing
-# the $( window.document ).bind('mobileinit', function(){}) must be bound to the Fixture - and subsequently the click et al. events
+# the $.mobile.changePage must be repurposed for testing  - my first take is defining it in a beforeEach, but that is really not the way to go, I believe
+# the $( window.document ).bind('mobileinit', function(){}) within jquery.mobile.splitview must be bound to the Fixture - and subsequently the click et al. events
+

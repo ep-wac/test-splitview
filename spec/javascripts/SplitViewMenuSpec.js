@@ -2,11 +2,15 @@ describe('Testing jQuery Mobile SplitView Navigation - Menu Panel', function () 
 
 	beforeEach( function(){
 		loadFixtures('test_coverage.html');
+		$.mobile.changePage = function(to, transition, reverse, changeHash, fromHashChange){
+			console.log(to, transition, reverse, changeHash, fromHashChange);
+			return true;
+		}
 	});
 	
 	function build_link_and_trigger( container, link, id, event){
 		$(link).appendTo(container);
-		// $(id).trigger(event);
+		$(id).trigger(event);
 	}
 
 	// <li><a id="t10" href="test_function()" >link calls function</a></li>
@@ -59,7 +63,7 @@ describe('Testing jQuery Mobile SplitView Navigation - Menu Panel', function () 
 				});
 				
 			});
-			
+			/*
 			describe('triggering a link in the content', function() {
 
 				it('should not navigate - ie it should stay on the same page in the menu panel', function () {
@@ -135,8 +139,9 @@ describe('Testing jQuery Mobile SplitView Navigation - Menu Panel', function () 
 					});
 				});
 			});
+			*/
 		});
-		
+	/*	
 		describe('will happen while being in the main panel', function(){
 			
 			var link_stay = '<a id="t1" href="/new_content.html" >link load an entire new content - in the menu panel</a>',
@@ -233,12 +238,13 @@ describe('Testing jQuery Mobile SplitView Navigation - Menu Panel', function () 
 
 					});
 				});
+
 			});
 			
 		});
-		
+	*/	
 	});
-	
+/*	
 	// link displays an existing page on the menu panel - and not load anything</a></li>
 	describe('should should display an existing page on the menu panel - and not load anything', function(){
 
@@ -454,5 +460,5 @@ describe('Testing jQuery Mobile SplitView Navigation - Menu Panel', function () 
 		});
 		
 	});
-
+*/
 });
