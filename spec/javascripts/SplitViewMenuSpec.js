@@ -2,13 +2,17 @@ describe('Testing jQuery Mobile SplitView Navigation - Menu Panel', function () 
 
 	beforeEach( function(){
 		loadFixtures('test_coverage.html');
-		$.mobile.changePage = function(to, transition, reverse, changeHash, fromHashChange){
-			console.log(to, transition, reverse, changeHash, fromHashChange);
-			return true;
-		}
+		$.mobile.initializePage();
 	});
 	
-	function build_link_and_trigger( container, link, id, event){
+	function build_link_and_trigger( container, link, id, event, response_callback){
+		
+		$.mockjax({
+		  url: $(link).attr('href'),
+		  responseTime: 750,
+		  response: response_callback 
+		});
+
 		$(link).appendTo(container);
 		$(id).trigger(event);
 	}
@@ -46,34 +50,38 @@ describe('Testing jQuery Mobile SplitView Navigation - Menu Panel', function () 
 		describe('will happen while being in the menu panel', function(){
 			
 			var link_stay = '<a id="t1" href="/new_content.html" >link load an entire new content - in the menu panel</a>',
-				link_go = '<a id="t1" href="/new_content.html" >link load an entire new content - in the menu panel</a>',
+				link_go = '<a id="t1" href="/new_content.html#page2" >link load an entire new content - in the menu panel</a>',
 				submit_link_stay = '<input id="t1" name="commit" type="submit" value="link POSTs form on active panel" />',
-				submit_link_go = '<input id="t1" name="commit" type="submit" value="link POSTs form on active panel" />';
+				submit_link_go = '<input id="t1" name="commit" data-panel="main" type="submit" value="link POSTs form on active panel" />';
 			
+
 			describe('triggering a link in the header', function() {
 
 				it('should not navigate - ie it should stay on the same page in the menu panel', function () {
-					build_link_and_trigger('.menu_panel_main_page_header', link_stay, '#t1','click');
-					expect($('#jasmine-fixtures')).toContain('#t1');
+					build_link_and_trigger('.menu_panel_main_page_header', link_stay, '#t1','click', function() {
+					    this.status = 'success';
+					    this.responseText = '<div data-role="page" id="kilo">hallej</div>';
+					});
+					expect($('#jasmine-fixtures').find('#kilo')).toHaveText('hallej');
 				});
-
-				it('should - after loading the new content - navigate to another page in the menu panel', function () {
-					build_link_and_trigger('.menu_panel_main_page_header', link_go, '#t1','click');
-					expect($('#jasmine-fixtures')).toContain('#t1');
-				});
+				// 
+				// it('should - after loading the new content - navigate to another page in the menu panel', function () {
+				// 	build_link_and_trigger('.menu_panel_main_page_header', link_go, '#t1','click');
+				// 	expect($('#changePage_to div')).toHaveText('/new_content.html#page2');
+				// });
 				
 			});
-			/*
+/*
 			describe('triggering a link in the content', function() {
 
 				it('should not navigate - ie it should stay on the same page in the menu panel', function () {
 					build_link_and_trigger('.menu_panel_main_page_content > ul',  '<li>' + link_stay + '</li>', '#t1','click');
-					expect($('#jasmine-fixtures')).toContain('#t1');
+					expect($('#changePage_to div')).toHaveText('/new_content.html');
 				});
 
 				it('should - after loading the new content - navigate to another page in the menu panel', function () {
 					build_link_and_trigger('.menu_panel_main_page_content > ul',  '<li>' + link_go + '</li>', '#t1','click');
-					expect($('#jasmine-fixtures')).toContain('#t1');
+					expect($('#changePage_to  div')).toHaveText('/new_content.html#page2');
 				});
 				
 			});
@@ -82,12 +90,12 @@ describe('Testing jQuery Mobile SplitView Navigation - Menu Panel', function () 
 
 				it('should not navigate - ie it should stay on the same page in the menu panel', function () {
 					build_link_and_trigger('.menu_panel_main_page_footer > ul',  '<li>' + link_stay + '</li>', '#t1','click');
-					expect($('#jasmine-fixtures')).toContain('#t1');
+					expect($('#changePage_to div')).toHaveText('/new_content.html');
 				});
 
 				it('should - after loading the new content - navigate to another page in the menu panel', function () {
 					build_link_and_trigger('.menu_panel_main_page_footer > ul',  '<li>' + link_go + '</li>', '#t1','click');
-					expect($('#jasmine-fixtures')).toContain('#t1');
+					expect($('#changePage_to  div')).toHaveText('/new_content.html#page2');
 				});
 				
 			});
@@ -97,7 +105,7 @@ describe('Testing jQuery Mobile SplitView Navigation - Menu Panel', function () 
 				describe('without ajax', function(){
 
 				});
-			
+/*			
 				describe('with ajax', function(){
 				
 					describe('inserting a form', function() {
@@ -138,8 +146,9 @@ describe('Testing jQuery Mobile SplitView Navigation - Menu Panel', function () 
 
 					});
 				});
+
 			});
-			*/
+*/
 		});
 	/*	
 		describe('will happen while being in the main panel', function(){

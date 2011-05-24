@@ -1,239 +1,153 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Ruby on Rails: Welcome aboard</title>
-    <style type="text/css" media="screen">
-      body {
-        margin: 0;
-        margin-bottom: 25px;
-        padding: 0;
-        background-color: #f0f0f0;
-        font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-        font-size: 13px;
-        color: #333;
-      }
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title>Page Title</title> 
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"> 
 
-      h1 {
-        font-size: 28px;
-        color: #000;
-      }
-
-      a  {color: #03c}
-      a:hover {
-        background-color: #03c;
-        color: white;
-        text-decoration: none;
-      }
+		<link rel="stylesheet" href="/stylesheets/jquery.mobile-1.0a4.1.css" />
+		<link rel="stylesheet" href="/stylesheets/jquery.mobile.splitview.css" /> 
+		<!-- <link rel="stylesheet" href="/stylesheets/jquery.mobile.scrollview.css" />  -->
+		<link rel="stylesheet" href="/stylesheets/jquery.mobile.grids.collapsible.css" /> 
 
 
-      #page {
-        background-color: #f0f0f0;
-        width: 750px;
-        margin: 0;
-        margin-left: auto;
-        margin-right: auto;
-      }
+	</head>
+	<body>
+		<!-- menu panel -->
+		<div data-role="panel" data-id="menu" data-hash="crumbs" >
+			<!-- Start of page epg1 --> 
+			<div data-role="page" id="epg1"> 
 
-      #content {
-        float: left;
-        background-color: white;
-        border: 3px solid #aaa;
-        border-top: none;
-        padding: 25px;
-        width: 500px;
-      }
+				<div data-role="header" data-backbtn="false" > 
+					<h1>Menu</h1> 
+					<!-- link to a loaded page in the menu panel - no (re)load -->
+					<a href="#epg2">e-pg2</a>
 
-      #sidebar {
-        float: right;
-        width: 175px;
-      }
+				</div><!-- /header --> 
 
-      #footer {
-        clear: both;
-      }
+				<div data-role="content">	
+					<ul data-role="listview" data-theme="g"> 
+						<li>About
+							<ul> 
+								<li><a href="#aboutus" data-panel="main">About Us</a></li> 
+								<li><a href="#mpg2" data-panel="main">main panel pg2</a></li> 
+								<li><a href="/main_page2.html" data-panel="main">main panel pg2</a></li> 
+							</ul> 
+						</li> 
+						<li>Features
+							<ul> 
+								<li><a href="#panels" data-panel="main">Panels</a></li> 
+								<li><a href="#orientation" data-panel="main">Orientation</a></li> 
+								<li><a href="#scroll" data-panel="main">Scroll</a></li> 
+							</ul> 
+						</li> 
+						<li><a href="#credits" data-panel="main">Credits</a></li> 
+						<li><a href="#source" data-panel="main">Source@Github</a></li> 
+					</ul> 
+				</div><!-- /content --> 
+
+				<!-- /footer --> 
+				<div data-role="footer" data-position="fixed" data-id="ew-footer"> 
+					<div data-role="navbar"> 
+						<ul> 
+							<li><a href="#epg1" class="ui-btn-active" data-transition="slideup">Main</a></li> 
+							<li><a href="#mpg1" data-panel="main" data-transition="slideup">Demos</a></li> 
+						</ul> 
+					</div><!-- /navbar --> 
+					<h2 class="ui-splitview-hidden">Engineworks &copy CS8</h2> 
+				</div>
+			</div>
+			<!-- Start of first page --> 
+			<div data-role="page" id="epg2"> 
+
+				<div data-role="header" data-backbtn="false" > 
+					<h1>Menu 2</h1> 
+					<!-- link to a loaded page in the menu panel -->
+					<a href="#epg2" data-panel="main">e-pg2</a>
+					<!-- link to a loaded page in the main panel -->
+					<a href="#mpg2" data-panel="main">m-pg2</a>
+				</div><!-- /header --> 
+
+				<div data-role="content">	
+					<ul data-role="listview" data-theme="g"> 
+						<li>About
+						</li> 
+					</ul> 
+				</div><!-- /content --> 
+
+				<!-- /footer --> 
+				<div data-role="footer" data-position="fixed" data-id="ew-footer"> 
+					<div data-role="navbar"> 
+						<ul> 
+							<li><a href="#epg1" class="ui-btn-active" data-transition="slideup">Main</a></li> 
+							<li><a href="#demo" data-transition="slideup">Demos</a></li> 
+						</ul> 
+					</div><!-- /navbar --> 
+					<h2 class="ui-splitview-hidden">Engineworks &copy CS8</h2> 
+				</div>
+			</div>
+		</div>
+	
+		<!-- main panel -->
+		<div data-role="panel" data-id="main" data-hash="crumbs" >
+			<div id="aboutus" data-role="page" data-url="aboutus">
+				<div data-role="header">
+					<h1>About Us</h1>
+				</div><!-- /header -->
+
+				<div data-role="content"> 
+					<h3>CS8</h3>
+					<p>We're a bunch of guys who love to code. Ruby on Rails, Wordpress, Drupal, and OpenERP - we love 'em all... and we'll soon be introducing our own open-source project, based on jQueryMobile, and Ruby on Rails.</p>
+					
+					<p>So stay tuned, check back here often, or follow us on facebook or twitter! details below:
+
+					</p><p><b>Twitter:</b> asyraf9</p>
+					<p><b>Facebook:</b> asyraf9</p> 
+					<p><b>Website:</b> <a href="http://www.cs8.my">www.cs8.my</a></p>
+				</div><!-- /content -->
+
+				<div class="ui-splitview-hidden" data-id="ew-footer" data-position="fixed" data-role="footer">
+					<div data-role="navbar">
+						<ul>
+							<li><a data-transition="slideup" class="ui-btn-active" href="#main">Main</a></li>
+							<li><a data-transition="slideup" href="#demo">Demos</a></li>
+						</ul>
+					</div><!-- /navbar -->
+					<h2>Engineworks &copy; CS8</h2>
+				</div><!-- /footer -->
+			</div>
+			<div id="mpg2" data-role="page" data-url="mpg2">
+				<div data-role="header">
+					<h1>MPG2</h1>
+				</div><!-- /header -->
+
+				<div data-role="content"> 
+					<h3>CS8</h3>
+					<p>We're a bunch of guys who love to code. Ruby on Rails, Wordpress, Drupal, and OpenERP - we love 'em all... and we'll soon be introducing our own open-source project, based on jQueryMobile, and Ruby on Rails.</p>
+					
+					<p>So stay tuned, check back here often, or follow us on facebook or twitter! details below:
+
+					</p><p><b>Twitter:</b> asyraf9</p>
+					<p><b>Facebook:</b> asyraf9</p> 
+					<p><b>Website:</b> <a href="http://www.cs8.my">www.cs8.my</a></p>
+				</div><!-- /content -->
+
+				<div class="ui-splitview-hidden" data-id="ew-footer" data-position="fixed" data-role="footer">
+					<div data-role="navbar">
+						<ul>
+							<li><a data-transition="slideup" class="ui-btn-active" href="#main">Main</a></li>
+							<li><a data-transition="slideup" href="#demo">Demos</a></li>
+						</ul>
+					</div><!-- /navbar -->
+					<h2>Engineworks &copy; CS8</h2>
+				</div><!-- /footer -->
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="/javascripts/jquery.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.mobile.splitview.js"></script>  
+	<!-- // <script type="text/javascript" src="/javascripts/jquery.mobile.scrollview.js"></script> -->
+	<script type="text/javascript" src="/javascripts/jquery.mobile-1.0a4.1.js"></script>
 
 
-      #header, #about, #getting-started {
-        padding-left: 75px;
-        padding-right: 30px;
-      }
-
-
-      #header {
-        background-image: url("images/rails.png");
-        background-repeat: no-repeat;
-        background-position: top left;
-        height: 64px;
-      }
-      #header h1, #header h2 {margin: 0}
-      #header h2 {
-        color: #888;
-        font-weight: normal;
-        font-size: 16px;
-      }
-
-
-      #about h3 {
-        margin: 0;
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-
-      #about-content {
-        background-color: #ffd;
-        border: 1px solid #fc0;
-        margin-left: -55px;
-        margin-right: -10px;
-      }
-      #about-content table {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 11px;
-        border-collapse: collapse;
-      }
-      #about-content td {
-        padding: 10px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-      }
-      #about-content td.name  {color: #555}
-      #about-content td.value {color: #000}
-
-      #about-content ul {
-        padding: 0;
-        list-style-type: none;
-      }
-
-      #about-content.failure {
-        background-color: #fcc;
-        border: 1px solid #f00;
-      }
-      #about-content.failure p {
-        margin: 0;
-        padding: 10px;
-      }
-
-
-      #getting-started {
-        border-top: 1px solid #ccc;
-        margin-top: 25px;
-        padding-top: 15px;
-      }
-      #getting-started h1 {
-        margin: 0;
-        font-size: 20px;
-      }
-      #getting-started h2 {
-        margin: 0;
-        font-size: 14px;
-        font-weight: normal;
-        color: #333;
-        margin-bottom: 25px;
-      }
-      #getting-started ol {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #getting-started li {
-        font-size: 18px;
-        color: #888;
-        margin-bottom: 25px;
-      }
-      #getting-started li h2 {
-        margin: 0;
-        font-weight: normal;
-        font-size: 18px;
-        color: #333;
-      }
-      #getting-started li p {
-        color: #555;
-        font-size: 13px;
-      }
-
-
-      #sidebar ul {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #sidebar ul h3 {
-        margin-top: 25px;
-        font-size: 16px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-      }
-      #sidebar li {
-        list-style-type: none;
-      }
-      #sidebar ul.links li {
-        margin-bottom: 5px;
-      }
-
-    </style>
-    <script type="text/javascript">
-      function about() {
-        info = document.getElementById('about-content');
-        if (window.XMLHttpRequest)
-          { xhr = new XMLHttpRequest(); }
-        else
-          { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
-        xhr.open("GET","rails/info/properties",false);
-        xhr.send("");
-        info.innerHTML = xhr.responseText;
-        info.style.display = 'block'
-      }
-    </script>
-  </head>
-  <body>
-    <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://stdlib.rubyonrails.org/">Ruby standard library</a></li>
-              <li><a href="http://corelib.rubyonrails.org/">Ruby core</a></li>
-              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-
-      <div id="content">
-        <div id="header">
-          <h1>Welcome aboard</h1>
-          <h2>You&rsquo;re riding Ruby on Rails!</h2>
-        </div>
-
-        <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
-
-        <div id="getting-started">
-          <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get rolling:</h2>
-
-          <ol>
-            <li>
-              <h2>Use <code>rails generate</code> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
-            </li>
-
-            <li>
-              <h2>Set up a default route and remove or rename this file</h2>
-              <p>Routes are set up in config/routes.rb.</p>
-            </li>
-
-            <li>
-              <h2>Create your database</h2>
-              <p>Run <code>rake db:migrate</code> to create your database. If you're not using SQLite (the default), edit <code>config/database.yml</code> with your username and password.</p>
-            </li>
-          </ol>
-        </div>
-      </div>
-
-      <div id="footer">&nbsp;</div>
-    </div>
-  </body>
 </html>

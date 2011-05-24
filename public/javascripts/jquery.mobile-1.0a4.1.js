@@ -2314,6 +2314,7 @@ $.widget( "mobile.page", $.mobile.widget, {
 			back = false,
 			forward = false,
 			pageTitle = document.title;
+			
 
 		// If we are trying to transition to the same page that we are currently on ignore the request.
 		// an illegal same page request is defined by the current page being the same as the url, as long as there's history
@@ -2405,7 +2406,6 @@ $.widget( "mobile.page", $.mobile.widget, {
 				try{from.data( "page" )._trigger( "beforehide", null, { nextPage: to } ); }catch(e){}
 			}
 			try{ to.data( "page" )._trigger( "beforeshow", null, { prevPage: from || $( "" ) } ); }catch(e){}
-
 			function pageChangeComplete() {
 
 				if( changeHash !== false && url ) {
@@ -2414,7 +2414,6 @@ $.widget( "mobile.page", $.mobile.widget, {
 					//update hash and history
 					path.set( url );
 				}
-
 				//if title element wasn't found, try the page div data attr too
 				var newPageTitle = to.jqmData( "title" ) || to.find( ".ui-header .ui-title" ).text();
 				if( !!newPageTitle && pageTitle === document.title ) {
@@ -2467,8 +2466,10 @@ $.widget( "mobile.page", $.mobile.widget, {
 
 			//register a done callback on the transition so we can do some book-keeping cleanup. 
 			deferred.done( function() {
+				console.log( 'defer for ' + to);
 				pageChangeComplete();
 			});
+			console.log( 'transitioninig ' + url);
 		}
 
 		//shared page enhancements
@@ -2528,7 +2529,6 @@ $.widget( "mobile.page", $.mobile.widget, {
 				success: function( html ) {
 					//pre-parse html to check for a data-url,
 					//use it as the new fileUrl, base path, etc
-					
 					var all = $( "<div></div>" ),
 							redirectLoc,
 
@@ -2556,10 +2556,11 @@ $.widget( "mobile.page", $.mobile.widget, {
 							base.set( fileUrl );
 						}
 					}
-
+					
 					//workaround to allow scripts to execute when included in page divs
 					all.get( 0 ).innerHTML = html;
 					to = all.find( ":jqmData(role='page'), :jqmData(role='dialog')" ).first();
+					
 
 					//finally, if it's defined now, set the page title for storage in urlHistory
 					if( newPageTitle ) {
@@ -2599,7 +2600,6 @@ $.widget( "mobile.page", $.mobile.widget, {
 					to
 						.attr( "data-" + $.mobile.ns + "url", fileUrl )
 						.appendTo( $.mobile.pageContainer );
-
 					enhancePage();
 					setTimeout( function() { transitionPages(); }, 0 );
 				},
@@ -5193,7 +5193,6 @@ $.fn.grid = function(options){
 
 			//define page container
 			$.mobile.pageContainer = $pages.first().parent().addClass( "ui-mobile-viewport" );
-
 			//cue page loading message
 			$.mobile.pageLoading();
 

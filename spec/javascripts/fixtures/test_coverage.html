@@ -1,3 +1,4 @@
+		<div id="changePage_to"></div>
 		
 		<!-- menu panel -->
 		<div data-role="panel" data-id="menu" data-hash="crumbs" data-context="menu_default">
@@ -6,7 +7,6 @@
 				</div>
 				<div data-role="content" class="menu_panel_main_page_content">	
 					<ul data-role="listview" data-theme="g">
-						<li><a id="fixed_link_one" href="" >a fixed link</a></li>
 					</ul>
 				</div>
 				<div data-role="footer" data-position="fixed" data-id="ew-footer" id="menu_footer" class="menu_panel_main_page_footer">
@@ -17,18 +17,18 @@
 				<div data-role="header" data-backbtn="false" >
 				</div>
 				<div data-role="content" >	
-					<form accept-charset="UTF-8" action="/posts" class="form_one" data-ajax="false" id="posts_new" method="post">
+					<form accept-charset="UTF-8" action="/posts" class="form_one" data-ajax="false" id="posts_new_one" method="post">
 						<div style="margin:0;padding:0;display:inline">
 							<input name="utf8" type="hidden" value="✓">
 							<input name="authenticity_token" type="hidden" value="token">
 						</div>
 						<div data-role="fieldcontain">
 							<div class="input string optional">
-								<input class="string optional" id="post_title" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
+								<input class="string optional" id="post_title_one" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
 							</div>
 						</div>
 					</form>					
-					<form accept-charset="UTF-8" action="/posts/1" class="form_two" data-ajax="false" id="posts_update" method="post">
+					<form accept-charset="UTF-8" action="/posts/1" class="form_two" data-ajax="false" id="posts_update_one" method="post">
 						<div style="margin:0;padding:0;display:inline">
 							<input name="utf8" type="hidden" value="✓">
 							<input name="_method" type="hidden" value="put">
@@ -36,22 +36,22 @@
 						</div>
 						<div data-role="fieldcontain">
 							<div class="input string optional">
-								<input class="string optional" id="post_title" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
+								<input class="string optional" id="post_title_two" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
 							</div>
 						</div>
 					</form>					
-					<form accept-charset="UTF-8" action="/posts" class="form_three" data-ajax="true" id="posts_new" method="post">
+					<form accept-charset="UTF-8" action="/posts" class="form_three" data-ajax="true" id="posts_new_two" method="post">
 						<div style="margin:0;padding:0;display:inline">
 							<input name="utf8" type="hidden" value="✓">
 							<input name="authenticity_token" type="hidden" value="token">
 						</div>
 						<div data-role="fieldcontain">
 							<div class="input string optional">
-								<input class="string optional" id="post_title" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
+								<input class="string optional" id="post_title_three" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
 							</div>
 						</div>
 					</form>					
-					<form accept-charset="UTF-8" action="/posts/1" class="form_four" data-ajax="true" id="posts_update" method="post">
+					<form accept-charset="UTF-8" action="/posts/1" class="form_four" data-ajax="true" id="posts_update_two" method="post">
 						<div style="margin:0;padding:0;display:inline">
 							<input name="utf8" type="hidden" value="✓">
 							<input name="_method" type="hidden" value="put">
@@ -59,7 +59,7 @@
 						</div>
 						<div data-role="fieldcontain">
 							<div class="input string optional">
-								<input class="string optional" id="post_title" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
+								<input class="string optional" id="post_title_four" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
 							</div>
 						</div>
 					</form>					
@@ -95,18 +95,18 @@
 					<ul data-role="listview" data-theme="g">
 						<li><a id="fixed_link_two" href="" >a fixed link</a></li>
 					</ul>
-					<form accept-charset="UTF-8" action="/posts" class="form_five" data-ajax="false" id="posts_new" method="post">
+					<form accept-charset="UTF-8" action="/posts" class="form_five" data-ajax="false" id="posts_new_three" method="post">
 						<div style="margin:0;padding:0;display:inline">
 							<input name="utf8" type="hidden" value="✓">
 							<input name="authenticity_token" type="hidden" value="token">
 						</div>
 						<div data-role="fieldcontain">
 							<div class="input string optional">
-								<input class="string optional" id="post_title" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
+								<input class="string optional" id="post_title_five" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
 							</div>
 						</div>
 					</form>					
-					<form accept-charset="UTF-8" action="/posts/1" class="form_six" data-ajax="false" id="posts_update" method="post">
+					<form accept-charset="UTF-8" action="/posts/1" class="form_six" data-ajax="false" id="posts_update_three" method="post">
 						<div style="margin:0;padding:0;display:inline">
 							<input name="utf8" type="hidden" value="✓">
 							<input name="_method" type="hidden" value="put">
@@ -114,22 +114,22 @@
 						</div>
 						<div data-role="fieldcontain">
 							<div class="input string optional">
-								<input class="string optional" id="post_title" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
+								<input class="string optional" id="post_title_six" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
 							</div>
 						</div>
 					</form>					
-					<form accept-charset="UTF-8" action="/posts" class="form_seven" data-ajax="true" id="posts_new" method="post">
+					<form accept-charset="UTF-8" action="/posts" class="form_seven" data-ajax="true" id="posts_new_four" method="post">
 						<div style="margin:0;padding:0;display:inline">
 							<input name="utf8" type="hidden" value="✓">
 							<input name="authenticity_token" type="hidden" value="token">
 						</div>
 						<div data-role="fieldcontain">
 							<div class="input string optional">
-								<input class="string optional" id="post_title" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
+								<input class="string optional" id="post_title_seven" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
 							</div>
 						</div>
 					</form>					
-					<form accept-charset="UTF-8" action="/posts/1" class="form_eight" data-ajax="true" id="posts_update" method="post">
+					<form accept-charset="UTF-8" action="/posts/1" class="form_eight" data-ajax="true" id="posts_update_four" method="post">
 						<div style="margin:0;padding:0;display:inline">
 							<input name="utf8" type="hidden" value="✓">
 							<input name="_method" type="hidden" value="put">
@@ -137,7 +137,7 @@
 						</div>
 						<div data-role="fieldcontain">
 							<div class="input string optional">
-								<input class="string optional" id="post_title" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
+								<input class="string optional" id="post_title_eight" maxlength="255" name="post[title]" placeholder="Title" size="50" type="text">
 							</div>
 						</div>
 					</form>					
